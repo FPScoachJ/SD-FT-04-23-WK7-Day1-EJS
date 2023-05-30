@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EJS Template</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <%- include ("../partials/nav.ejs") %>
+    <div class="container">
+    <% userData.forEach((user)=>{ %>
+            <div class = "card">
+                <div class="bg-image"></div>
+      <h1><%= user.name %></h1>
+      <h3><%=user.company.name%></h3>
+      <h4><%= user.email %></h4>
+      <div class = "skills">
+      <h4><%= user.skills %></h4>
+      </div>
+      <div class = "projects">
+      <% user.projects.forEach((projects)=>{ %>
+        <h4><%= projects.name %></h4>
+      </div >
+      <% }) %>
+      <% }) %>
+    </div>
+</div>
+  </body>
+</html>
